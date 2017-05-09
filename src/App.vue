@@ -41,11 +41,27 @@
 			<ul>
 				<li v-for="(item,index) in names" :key="index">{{index}}--{{item}}</li>
 			</ul>
+			<!-- 第三种写法 能够遍历一个对象中所有属性的值-->
+			<ul>
+				<li v-for="item in user">{{item}}</li>
+			</ul>
+			<!-- 第四种写法 能够遍历一个对象中所有属性的值 显示值和属性的名称-->
+			<ul>
+				<li v-for="(item,key,index) in user" :key="index">{{index}},{{key}},{{item}}</li>
+			</ul>
+			<!-- 第五种写法 能够遍历一个整数-->
+			<ul>
+				<li v-for="item in 3">{{item}}</li>
+			</ul>
 		</div>
+		<parentVue></parentVue>
 	</div>
 </template>
 
 <script>
+// 在vue根组件中导入parent组件
+import parentVue from './components/parent.vue'
+
 	export default{
 		data(){
 			return {
@@ -53,14 +69,18 @@
 				msg1:'<h1>hello world!</h1>',
 				tip:'提示',
 				isOk:0,
-				names:['诸葛亮','曹操','刘备','刘备']
+				names:['诸葛亮','曹操','刘备','刘备'],
+				user:{name:'曹操',age:400}
 			}
 		},
 		methods:{
 			click(){
 				this.isOk=!this.isOk
 			}
-		}
+		},
+		components:{
+			parentVue
+		} //注册parent组件
 	}
 </script>
 
