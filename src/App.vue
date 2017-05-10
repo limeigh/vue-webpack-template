@@ -54,7 +54,13 @@
 				<li v-for="item in 3">{{item}}</li>
 			</ul>
 		</div>
+		<h2>父组件注册和使用子组件以及父组件向子组件传入数据</h2>
 		<parentVue></parentVue>
+		<h2>vue路由规则</h2>
+		<router-link to="/Account/Login/13/login">登录</router-link>
+		<router-link to="/Account/Register">注册</router-link>
+		<router-link to="/Account/vueResource">ajax请求</router-link>
+		<router-view></router-view>
 	</div>
 </template>
 
@@ -65,8 +71,8 @@ import parentVue from './components/parent.vue'
 	export default{
 		data(){
 			return {
-				msg:'hello world!!',
-				msg1:'<h1>hello world!</h1>',
+				msg:'vue 相关指令!!',
+				msg1:'<h1>vue 相关指令!</h1>',
 				tip:'提示',
 				isOk:0,
 				names:['诸葛亮','曹操','刘备','刘备'],

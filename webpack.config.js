@@ -10,6 +10,14 @@ module.exports={
 			{
 				test:/\.vue$/,
 				loader:'vue-loader'
+			},
+			{
+				test:/\.css$/,
+				loader:'style-loader!css-loader!autoprefixer-loader'
+			},
+			{
+				test:/\.(jpg|png|ttf)$/,
+				loader:'url-loader?limit=40000'
 			}
 		]
 	},
